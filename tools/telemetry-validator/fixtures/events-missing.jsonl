@@ -1,0 +1,2 @@
+{"timestamp":"2026-01-15T12:00:00Z","provider":"Microsoft-Windows-PowerShell","event_id":4104,"channel":"Microsoft-Windows-PowerShell/Operational","data":{"ScriptBlockText":"synthetic fixture content"}}
+{"timestamp":"2026-01-15T12:00:03Z","provider":"Microsoft-Windows-Security-Auditing","event_id":4688,"channel":"Security","data":{"NewProcessName":"C:\\Lab\\benign.exe"}}

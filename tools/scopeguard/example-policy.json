@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "engagement_id": "ENG-DEMO-2030-001",
+  "expires_at": "2099-12-31T23:59:59Z",
+  "allow": {
+    "domains": [
+      "example.com",
+      "*.example.com"
+    ],
+    "cidrs": [
+      "192.0.2.0/24",
+      "2001:db8:100::/48"
+    ],
+    "ports": [
+      80,
+      443,
+      "8000-8010"
+    ]
+  },
+  "deny": {
+    "domains": [
+      "admin.example.com",
+      "*.restricted.example.com"
+    ],
+    "cidrs": [
+      "192.0.2.240/28",
+      "2001:db8:100:ffff::/64"
+    ],
+    "ports": [
+      8005
+    ]
+  }
+}

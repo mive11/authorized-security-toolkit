@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "engagement": {
+    "id": "ENG-2026-001",
+    "name": "Authorized Identity Control Assessment",
+    "client": "Example Organization",
+    "assessment_type": "Red team control validation",
+    "start_date": "2026-08-03",
+    "end_date": "2026-08-07",
+    "report_date": "2026-08-10",
+    "classification": "confidential",
+    "scope": [
+      "identity.example.test",
+      "Approved test tenant"
+    ],
+    "authors": [
+      "Security Assessment Team"
+    ]
+  },
+  "findings": [
+    {
+      "id": "FIND-001",
+      "title": "Administrative roles lack phishing-resistant MFA",
+      "severity": "high",
+      "status": "open",
+      "asset": "identity.example.test",
+      "description": "Approved validation showed that selected administrative roles could use a weaker authentication factor.",
+      "evidence": [
+        "Test account admin-review-01 completed the approved sign-in flow with a legacy factor.",
+        "Authorization: Bearer [REDACTED]"
+      ],
+      "remediation": "Require phishing-resistant MFA for privileged roles and verify the policy with a dedicated test account.",
+      "references": [
+        "https://attack.mitre.org/techniques/T1078/"
+      ],
+      "attack_techniques": [
+        "T1078"
+      ]
+    },
+    {
+      "id": "FIND-002",
+      "title": "Privileged role changes need centralized alerting",
+      "severity": "medium",
+      "status": "in_progress",
+      "asset": "Approved test tenant",
+      "description": "The test role assignment was recorded, but no centralized alert reached the assessment contact during the agreed observation window.",
+      "evidence": [
+        "Approved change CR-TEST-1042 appeared in the tenant audit log.",
+        "No matching alert was present in the supplied test-case export."
+      ],
+      "remediation": "Create and validate an alert for privileged role assignment, including actor, target, time, and review owner.",
+      "references": [
+        "https://attack.mitre.org/techniques/T1098/"
+      ],
+      "attack_techniques": [
+        "T1098"
+      ],
+      "cves": []
+    }
+  ]
+}

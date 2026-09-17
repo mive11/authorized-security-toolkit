@@ -1,0 +1,7 @@
+{"timestamp":"2026-01-15T12:00:00Z","provider":"Microsoft-Windows-PowerShell","event_id":4103,"channel":"Microsoft-Windows-PowerShell/Operational","data":{"HostApplication":"training-shell","User":"LAB\\analyst"}}
+{"timestamp":"2026-01-15T12:00:01Z","provider":"Microsoft-Windows-PowerShell","event_id":4104,"channel":"Microsoft-Windows-PowerShell/Operational","data":{"ScriptBlockText":"synthetic fixture content","Token":"fixture-token"}}
+{"timestamp":"2026-01-15T12:00:02Z","provider":"Microsoft-Windows-Sysmon","event_id":1,"channel":"Microsoft-Windows-Sysmon/Operational","data":{"Image":"C:\\Lab\\benign.exe","CommandLine":"benign.exe --fixture"}}
+{"timestamp":"2026-01-15T12:00:03Z","provider":"Microsoft-Windows-Security-Auditing","event_id":4688,"channel":"Security","data":{"NewProcessName":"C:\\Lab\\benign.exe","SubjectUserName":"analyst"}}
+{"timestamp":"2026-01-15T12:00:04Z","provider":"Microsoft-Windows-Windows Defender","event_id":1000,"channel":"Microsoft-Windows-Windows Defender/Operational","data":{"Health":"synthetic"}}
+{"timestamp":"2026-01-15T12:00:05Z","provider":"Microsoft-Antimalware-Scan-Interface","event_id":1,"channel":"Synthetic/Export","data":{"Result":"fixture"}}
+{"timestamp":"2026-01-15T12:00:06Z","provider":"Microsoft-Windows-Kernel-EventTracing","event_id":2,"channel":"Microsoft-Windows-Kernel-EventTracing/Admin","data":{"Session":"fixture"}}

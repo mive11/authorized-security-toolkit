@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.coverage
+.pytest_cache/
+demo-output/
+report-output/
+Recon_Fase_Pasiva/
+*.log

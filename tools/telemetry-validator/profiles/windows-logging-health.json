@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "windows-logging-health",
+  "title": "Windows logging health evidence",
+  "description": "Checks a bounded export for records associated with common Windows security telemetry. Results describe record presence only and do not establish prevention, detection, or bypass.",
+  "signals": [
+    {
+      "id": "powershell-module-logging",
+      "title": "PowerShell module logging record (4103)",
+      "attack_techniques": ["T1059.001"],
+      "any_of": [
+        {
+          "provider": "Microsoft-Windows-PowerShell",
+          "event_id": 4103,
+          "channel": "Microsoft-Windows-PowerShell/Operational"
+        }
+      ],
+      "min_count": 1
+    },
+    {
+      "id": "powershell-script-block-logging",
+      "title": "PowerShell script block logging record (4104)",
+      "attack_techniques": ["T1059.001"],
+      "any_of": [
+        {
+          "provider": "Microsoft-Windows-PowerShell",
+          "event_id": 4104,
+          "channel": "Microsoft-Windows-PowerShell/Operational"
+        }
+      ],
+      "min_count": 1
+    },
+    {
+      "id": "sysmon-process-create",
+      "title": "Sysmon process creation record (1)",
+      "attack_techniques": ["T1059"],
+      "any_of": [
+        {
+          "provider": "Microsoft-Windows-Sysmon",
+          "event_id": 1,
+          "channel": "Microsoft-Windows-Sysmon/Operational"
+        }
+      ],
+      "min_count": 1
+    },
+    {
+      "id": "security-process-create",
+      "title": "Security process creation audit record (4688)",
+      "attack_techniques": ["T1059"],
+      "any_of": [
+        {
+          "provider": "Microsoft-Windows-Security-Auditing",
+          "event_id": 4688,
+          "channel": "Security"
+        }
+      ],
+      "min_count": 1
+    },
+    {
+      "id": "defender-operational-provider-presence",
+      "title": "Microsoft Defender operational provider record presence",
+      "attack_techniques": [],
+      "any_of": [
+        {
+          "provider": "Microsoft-Windows-Windows Defender",
+          "channel": "Microsoft-Windows-Windows Defender/Operational"
+        }
+      ],
+      "min_count": 1
+    },
+    {
+      "id": "amsi-provider-presence",
+      "title": "AMSI-related provider record presence",
+      "attack_techniques": ["T1059.001"],
+      "any_of": [
+        {"provider": "Microsoft-Antimalware-Scan-Interface"},
+        {"provider": "Microsoft-Windows-Antimalware-Scan-Interface"},
+        {
+          "provider": "Microsoft-Windows-Windows Defender",
+          "fields": {"telemetry_source": {"equals": "amsi"}}
+        }
+      ],
+      "min_count": 1
+    },
+    {
+      "id": "etw-provider-presence",
+      "title": "ETW infrastructure provider record presence",
+      "attack_techniques": [],
+      "any_of": [
+        {"provider": "Microsoft-Windows-Kernel-EventTracing"},
+        {"provider": "Microsoft-Windows-Eventlog"}
+      ],
+      "min_count": 1
+    }
+  ]
+}
