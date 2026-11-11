@@ -56,6 +56,8 @@ See [SECURITY.md](SECURITY.md) for reporting issues, [PORTFOLIO.md](PORTFOLIO.md
 
 GitHub Actions validates the suite on Ubuntu. On Windows, use WSL for the complete workflow; native Windows support is not claimed because the passive collector and audit lock rely on POSIX facilities. macOS is expected to provide those facilities but is not part of the current CI matrix.
 
+For Windows users, follow the [WSL 2 setup guide](WINDOWS-SETUP.md).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
